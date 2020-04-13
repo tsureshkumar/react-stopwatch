@@ -1,16 +1,15 @@
 import * as React from 'react';
-import {Fragment} from 'react';
+import {Fragment, useEffect, useState, useRef} from 'react';
 import * as rx from 'rxjs';
-import * as rxop from 'rxjs/operators';
+import {map, distinctUntilChanged} from 'rxjs/operators';
 import * as _ from 'lodash';
-import {map} from 'rxjs/operators';
 import './App.css';
 
 const keyDowns$ = rx.fromEvent(document, 'keydown');
 const keyUps$ = rx.fromEvent(document, 'keyup');
 const keyActions$ = rx.merge(keyDowns$, keyUps$).pipe(
-  rxop.map((e: Event) => e as KeyboardEvent),
-  rxop.distinctUntilChanged(),
+  map((e: Event) => e as KeyboardEvent),
+  distinctUntilChanged(),
 );
 
 keyUps$
@@ -48,19 +47,32 @@ const LapC = ({lap}: {lap: Lap}) => {
   );
 };
 
+function useInterval(callback: (x: number) => any, delay: number) {
+  const tick = useRef((x: number) => {});
+  const timerRef = useRef(0);
+  useEffect(() => {
+    tick.current = callback;
+  }, [callback]);
+  useEffect(() => {
+    if (delay && tick.current) {
+      const interval = setInterval(() => {
+        timerRef.current += delay;
+        tick.current(timerRef.current);
+      }, delay);
+      return () => clearInterval(interval);
+    }
+  }, [delay]);
+}
+
 function App() {
-  const [timer, updateTimer] = React.useState(0);
-  const [laps, updateLaps] = React.useState([] as Lap[]);
+  const [timer, updateTimer] = useState(0);
+  const [laps, updateLaps] = useState([] as Lap[]);
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      updateTimer(timer + 300);
-      timer$.next(timer + 300);
-    }, 300);
-    return () => clearInterval(interval);
-  }, [timer]);
+  useInterval((elapsed: number) => {
+    updateTimer(elapsed);
+  }, 300);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const sub = keyUps$
       .pipe(map(e => e as KeyboardEvent))
       .subscribe((e: KeyboardEvent) => {
