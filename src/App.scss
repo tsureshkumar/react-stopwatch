@@ -1,7 +1,20 @@
+// google fonts
+@font-face {
+  font-family: 'Archivo Bold';
+  src: local('Archivo Bold'), url('./fonts/Archivo/Archivo-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Archivo Regular';
+  src: local('Archivo Regular'), url('./fonts/Archivo/Archivo-Regular.ttf') format('truetype');
+}
+
+
+// create random background color
 @mixin random-bgr() {
   background: rgb(random(255), random(255), random(255));
 }
 
+// media queries and related styles
 $phone-width: 360px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
@@ -39,6 +52,7 @@ $desktop-width: 1024px;
   }
 }
 
+// cards
 @mixin Card($title: "title", $body: "body", $controls: "controls") {
   padding: 0px 0px 0px 0px;
   overflow: hidden;
@@ -82,30 +96,15 @@ $desktop-width: 1024px;
       text-align: left;
     }
   }
-
-  
 }
-
-// div {
-
-//   $num-colors: 1030;
-//   $base-color: #996B4D;
-//   $spectrum: 360deg;
-//   $offset:50deg;
-
-//   @for $i from 2 to $num-colors {
-//     &:nth-child(#{$i}) {
-//       @include random-bgr();
-//     }
-//   }
-// }
-
 
 
 .App {
   @include desktop();
   @include tablet();
   @include phone();
+
+  font-family: "Archivo Regular";
 
   text-align: center;
   display: flex;
@@ -122,12 +121,16 @@ $desktop-width: 1024px;
     align-self: stretch;
 
     .controls {
-      // background-color: #61dafb;
+      //background-color: rgba(97, 218, 251);
+      background-color: rgba(236, 239, 241,0.5);
       display: flex;
       flex-direction: column;
       align-self: flex-start;
       top: 0;
-      position: sticky;
+      right:0;
+      min-height: 100vh;
+      z-index: 100;
+      position: absolute;
       width: 40px;
     }
 
@@ -141,14 +144,15 @@ $desktop-width: 1024px;
 
       .mainTimer {
         @extend .mainTimerResponsive;
+        font-family: "Archivo Bold";
         display: flex;
         justify-content: space-around;
         background-color: white;
         top: 0;
         position: sticky;
-        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-        0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
-        transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        // box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        // 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+        // transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
       }
       .lapTimer {
         display: flex;
@@ -168,8 +172,7 @@ $desktop-width: 1024px;
           text-align: center;
           font-size: .5em;
         }
-        & .content {
-        }
+        & .content { }
       }
       .lapsContainer {
         display: flex;
@@ -219,41 +222,6 @@ $desktop-width: 1024px;
         font-size: .5em;
       }
     }
-  }
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  // background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
