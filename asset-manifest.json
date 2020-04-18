@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.ebcbc7d2.chunk.css",
-    "main.js": "/static/js/main.504a1fda.chunk.js",
-    "main.js.map": "/static/js/main.504a1fda.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ddbad2c1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ddbad2c1.js.map",
-    "static/js/2.0dba5d72.chunk.js": "/static/js/2.0dba5d72.chunk.js",
-    "static/js/2.0dba5d72.chunk.js.map": "/static/js/2.0dba5d72.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.ebbca23d5c0dbc5988cc1613d58b34cd.js": "/precache-manifest.ebbca23d5c0dbc5988cc1613d58b34cd.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.ebcbc7d2.chunk.css.map": "/static/css/main.ebcbc7d2.chunk.css.map",
-    "static/js/2.0dba5d72.chunk.js.LICENSE.txt": "/static/js/2.0dba5d72.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/static/media/Archivo-Regular.4b36aaa8.ttf"
+    "main.css": "https://tsureshkumar.github.io/react-stopwatch/static/css/main.1bd1dae1.chunk.css",
+    "main.js": "https://tsureshkumar.github.io/react-stopwatch/static/js/main.80624836.chunk.js",
+    "main.js.map": "https://tsureshkumar.github.io/react-stopwatch/static/js/main.80624836.chunk.js.map",
+    "runtime-main.js": "https://tsureshkumar.github.io/react-stopwatch/static/js/runtime-main.4a7efc2b.js",
+    "runtime-main.js.map": "https://tsureshkumar.github.io/react-stopwatch/static/js/runtime-main.4a7efc2b.js.map",
+    "static/js/2.0dba5d72.chunk.js": "https://tsureshkumar.github.io/react-stopwatch/static/js/2.0dba5d72.chunk.js",
+    "static/js/2.0dba5d72.chunk.js.map": "https://tsureshkumar.github.io/react-stopwatch/static/js/2.0dba5d72.chunk.js.map",
+    "index.html": "https://tsureshkumar.github.io/react-stopwatch/index.html",
+    "precache-manifest.adcf47df519fe892f82c991570bd01bf.js": "https://tsureshkumar.github.io/react-stopwatch/precache-manifest.adcf47df519fe892f82c991570bd01bf.js",
+    "service-worker.js": "https://tsureshkumar.github.io/react-stopwatch/service-worker.js",
+    "static/css/main.1bd1dae1.chunk.css.map": "https://tsureshkumar.github.io/react-stopwatch/static/css/main.1bd1dae1.chunk.css.map",
+    "static/js/2.0dba5d72.chunk.js.LICENSE.txt": "https://tsureshkumar.github.io/react-stopwatch/static/js/2.0dba5d72.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "https://tsureshkumar.github.io/react-stopwatch/static/media/Archivo-Regular.4b36aaa8.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.ddbad2c1.js",
+    "static/js/runtime-main.4a7efc2b.js",
     "static/js/2.0dba5d72.chunk.js",
-    "static/css/main.ebcbc7d2.chunk.css",
-    "static/js/main.504a1fda.chunk.js"
+    "static/css/main.1bd1dae1.chunk.css",
+    "static/js/main.80624836.chunk.js"
   ]
 }
